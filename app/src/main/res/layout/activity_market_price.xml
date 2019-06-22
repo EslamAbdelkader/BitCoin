@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MarketPriceActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/resultLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guidelineLeft"
+                app:layout_constraintGuide_percent="0.05"
+                android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guidelineRight"
+                app:layout_constraintGuide_percent="0.95"
+                android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guidelineTop"
+                app:layout_constraintGuide_percent="0.2"
+                android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guidelineBottom"
+                app:layout_constraintGuide_percent="0.8"
+                android:orientation="horizontal"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Hello World!"
+                app:layout_constraintTop_toTopOf="@id/guidelineTop"
+                app:layout_constraintLeft_toLeftOf="@id/guidelineLeft"
+                app:layout_constraintRight_toRightOf="@id/guidelineRight"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"/>
+
+        <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                android:layout_marginEnd="@dimen/title_margin"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                android:layout_marginStart="@dimen/title_margin"
+                app:layout_constraintBottom_toTopOf="@+id/chartView"
+                android:layout_marginTop="@dimen/title_margin"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Market Price (USD)"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_text_size"/>
+
+        <TextView
+                android:id="@+id/subtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                android:layout_marginEnd="@dimen/subtitle_margin"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                android:layout_marginStart="@dimen/subtitle_margin"
+                app:layout_constraintBottom_toTopOf="@+id/chartView"
+                android:layout_marginTop="@dimen/subtitle_margin"
+                app:layout_constraintTop_toTopOf="@+id/titleTextView"
+                tools:text="Average USD market price across major bitcoin exchanges."
+                android:textSize="@dimen/subtitle_text_size"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

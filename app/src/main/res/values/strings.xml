@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">N26 Block Chain</string>
+    <string name="retry_button_title">Retry</string>
+    <string name="network_error_message">Please check your connection and try again</string>
+    <string name="general_error_message">An error has occurred</string>
+    <string name="set_title">Bit Coin Market Price</string>
+</resources>
