@@ -3,8 +3,7 @@ package com.eslam.blockchain.domain
 import com.eslam.blockchain.model.MarketPriceResponse
 import com.eslam.blockchain.repository.IMarketPriceRepository
 import com.nhaarman.mockitokotlin2.whenever
-import io.reactivex.Single
-import io.reactivex.rxkotlin.subscribeBy
+import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
@@ -27,27 +26,19 @@ class MarketPriceInteractorTest {
      * Mocking the Repo to initialize the interactor
      */
     @Before
-    fun setUp() {
+    fun setUp() = runBlocking {
         val repo = mock(IMarketPriceRepository::class.java)
-        whenever(repo.getMarketPrice()).thenReturn(dummyResponse())
+        whenever(repo.getMarketPrice()).thenReturn(MARKET_PRICE_RESPONSE)
 
         interactor.marketPriceRepository = repo
-    }
-
-    /**
-     * Passing Single observable with the constant response
-     */
-    private fun dummyResponse(): Single<MarketPriceResponse>? {
-        return Single.create { it.onSuccess(MARKET_PRICE_RESPONSE) }
     }
 
     /**
      * Testing that the interactor is just passing the values from the Repository without any manipulation.
      */
     @Test
-    fun testInteractorPassingResponseWithoutManipulation() {
-        var response: MarketPriceResponse? = null
-        interactor.loadData().subscribeBy { response = it }
+    fun testInteractorPassingResponseWithoutManipulation() = runBlocking {
+        val response: MarketPriceResponse? = interactor.loadData()
         assertNotNull(response)
         assertEquals(response, MARKET_PRICE_RESPONSE)
     }

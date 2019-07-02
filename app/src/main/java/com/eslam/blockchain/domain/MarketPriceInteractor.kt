@@ -2,7 +2,6 @@ package com.eslam.blockchain.domain
 
 import com.eslam.blockchain.model.MarketPriceResponse
 import com.eslam.blockchain.repository.IMarketPriceRepository
-import io.reactivex.Single
 import javax.inject.Inject
 
 /**
@@ -17,7 +16,8 @@ class MarketPriceInteractor @Inject constructor() : IMarketPriceInteractor {
     /**
      * retrieves a Single Observable of MarketPriceResponse from the Repository
      */
-    override fun loadData(): Single<MarketPriceResponse> = marketPriceRepository.getMarketPrice()
+    @Throws(Exception::class)
+    override suspend fun loadData(): MarketPriceResponse = marketPriceRepository.getMarketPrice()
 }
 
 /**
@@ -27,5 +27,6 @@ interface IMarketPriceInteractor {
     /**
      * retrieves a Single Observable of MarketPriceResponse from the Repository
      */
-    fun loadData(): Single<MarketPriceResponse>
+    @Throws(Exception::class)
+    suspend fun loadData(): MarketPriceResponse
 }

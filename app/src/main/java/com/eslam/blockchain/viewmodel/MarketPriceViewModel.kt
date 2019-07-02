@@ -4,14 +4,14 @@ import androidx.arch.core.util.Function
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.eslam.blockchain.R
 import com.eslam.blockchain.domain.IMarketPriceInteractor
 import com.eslam.blockchain.model.MarketPriceResponse
 import com.eslam.blockchain.model.MarketPriceUIModel
 import com.eslam.blockchain.model.State
 import com.eslam.blockchain.util.IStringProvider
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.subscribeBy
+import kotlinx.coroutines.launch
 import java.net.ConnectException
 import java.net.SocketException
 import java.net.UnknownHostException
@@ -33,7 +33,6 @@ class MarketPriceViewModel : ViewModel() {
     lateinit var stringProvider: IStringProvider
 
     private val state by lazy { MutableLiveData<State>() }
-    private val compositeDisposable by lazy { CompositeDisposable() }
 
     /**
      * Explicit getter to expose LiveData instead of MutableLiveData
@@ -45,15 +44,16 @@ class MarketPriceViewModel : ViewModel() {
      * Retrieves the data from the interactor, and sets the data and state in the LiveData holders
      */
     fun loadData() {
-        val disposable = interactor.loadData()
-            .doOnSubscribe { state.value = State.LOADING }
-            .map { mapper.apply(it) }
-            .subscribeBy(
-                onSuccess = { model -> state.value = State.SUCCESS(model) },
-                onError = { throwable -> state.value = mapError(throwable) }
-            )
-
-        compositeDisposable.add(disposable)
+        state.value = State.LOADING
+        viewModelScope.launch {
+            try {
+                val data: MarketPriceResponse = interactor.loadData()
+                val uiModel = mapper.apply(data)
+                state.value = State.SUCCESS(uiModel)
+            } catch (error: Throwable) {
+                state.value = mapError(error)
+            }
+        }
     }
 
     /**
@@ -67,12 +67,5 @@ class MarketPriceViewModel : ViewModel() {
         }
 
         return State.ERROR(message)
-    }
-
-    /**
-     * Disposes all subscriptions in [compositeDisposable] when ViewModel is finally destroyed
-     */
-    override fun onCleared() {
-        compositeDisposable.dispose()
     }
 }

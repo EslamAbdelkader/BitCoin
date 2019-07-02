@@ -2,9 +2,6 @@ package com.eslam.blockchain.repository
 
 import com.eslam.blockchain.model.MarketPriceResponse
 import com.eslam.blockchain.network.ChartApi
-import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 /**
@@ -20,17 +17,14 @@ class MarketPriceRepository @Inject constructor() : IMarketPriceRepository {
     /**
      * Fetches market price values from network data source ([chartApi])
      */
-    override fun getMarketPrice(): Single<MarketPriceResponse> {
-        return chartApi
-            .getMarketPrice()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-    }
+    @Throws(Exception::class)
+    override suspend fun getMarketPrice(): MarketPriceResponse = chartApi.getMarketPrice()
 }
 
 /**
  * Market Price Repository Interface
  */
 interface IMarketPriceRepository {
-    fun getMarketPrice(): Single<MarketPriceResponse>
+    @Throws(Exception::class)
+    suspend fun getMarketPrice(): MarketPriceResponse
 }
