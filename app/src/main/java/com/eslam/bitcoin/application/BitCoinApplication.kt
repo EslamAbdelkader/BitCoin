@@ -1,4 +1,4 @@
-package com.eslam.bitcoin
+package com.eslam.bitcoin.application
 
 import android.annotation.SuppressLint
 import android.app.Application

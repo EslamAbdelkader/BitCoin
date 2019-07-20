@@ -1,6 +1,6 @@
-package com.eslam.bitcoin.network
+package com.eslam.bitcoin.marketprice.network
 
-import com.eslam.bitcoin.model.MarketPriceResponse
+import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 

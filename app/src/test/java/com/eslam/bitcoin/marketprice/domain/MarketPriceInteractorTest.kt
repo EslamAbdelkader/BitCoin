@@ -1,7 +1,7 @@
-package com.eslam.bitcoin.domain
+package com.eslam.bitcoin.marketprice.domain
 
-import com.eslam.bitcoin.model.MarketPriceResponse
-import com.eslam.bitcoin.repository.IMarketPriceRepository
+import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
+import com.eslam.bitcoin.marketprice.repository.IMarketPriceRepository
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.Single
 import io.reactivex.rxkotlin.subscribeBy
