@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.eslam.bitcoin.R
-import com.eslam.bitcoin.di.DaggerMarketPriceComponent
 import com.eslam.bitcoin.model.MarketPriceUIModel
 import com.eslam.bitcoin.model.State
 import com.eslam.bitcoin.util.hideLoading
 import com.eslam.bitcoin.util.showLoading
 import com.eslam.bitcoin.viewmodel.MarketPriceViewModel
+import com.eslam.bitcoin.viewmodel.MarketPriceViewModelFactory
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -27,10 +27,10 @@ import kotlinx.android.synthetic.main.activity_market_price.*
 class MarketPriceActivity : AppCompatActivity() {
 
     private val marketPriceViewModel: MarketPriceViewModel by lazy {
-        ViewModelProviders.of(this)
-            .get(MarketPriceViewModel::class.java).apply {
-                DaggerMarketPriceComponent.create().inject(this)
-            }
+        ViewModelProviders.of(
+            this,
+            MarketPriceViewModelFactory()
+        ).get(MarketPriceViewModel::class.java)
     }
 
     /**
@@ -42,11 +42,9 @@ class MarketPriceActivity : AppCompatActivity() {
 
         marketPriceViewModel.getState().observe(this, Observer { handleState(it) })
 
-        swipeLayout.setOnRefreshListener { marketPriceViewModel.loadData() }
+        swipeLayout.setOnRefreshListener { reload() }
 
         initChart()
-
-        marketPriceViewModel.loadData()
     }
 
     /**
@@ -95,8 +93,15 @@ class MarketPriceActivity : AppCompatActivity() {
     private fun showError(message: String) {
         Snackbar.make(resultLayout, message, Snackbar.LENGTH_SHORT)
             .setAnimationMode(ANIMATION_MODE_SLIDE)
-            .setAction(R.string.retry_button_title) { marketPriceViewModel.loadData() }
+            .setAction(R.string.retry_button_title) { reload() }
             .show()
+    }
+
+    /**
+     * Reload data
+     */
+    private fun reload() {
+        marketPriceViewModel.loadData()
     }
 
     /**

@@ -2,11 +2,12 @@ package com.eslam.bitcoin.model
 
 import androidx.arch.core.util.Function
 import com.github.mikephil.charting.data.Entry
+import javax.inject.Inject
 
 /**
  * A mapper class responsible for mapping [MarketPriceResponse] into [MarketPriceUIModel]
  */
-open class MarketPriceMapper : Function<MarketPriceResponse, MarketPriceUIModel> {
+open class MarketPriceMapper @Inject constructor(): Function<MarketPriceResponse, MarketPriceUIModel> {
 
     /**
      * mapping [response] of type [MarketPriceResponse] to [MarketPriceUIModel]
