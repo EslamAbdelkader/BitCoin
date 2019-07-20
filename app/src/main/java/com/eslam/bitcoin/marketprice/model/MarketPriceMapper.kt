@@ -1,4 +1,4 @@
-package com.eslam.bitcoin.model
+package com.eslam.bitcoin.marketprice.model
 
 import androidx.arch.core.util.Function
 import com.github.mikephil.charting.data.Entry

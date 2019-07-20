@@ -1,8 +1,8 @@
-package com.eslam.bitcoin.viewmodel
+package com.eslam.bitcoin.marketprice.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.eslam.bitcoin.BitCoinApplication
+import com.eslam.bitcoin.application.BitCoinApplication
 
 /**
  * Factory class for [MarketPriceViewModel]

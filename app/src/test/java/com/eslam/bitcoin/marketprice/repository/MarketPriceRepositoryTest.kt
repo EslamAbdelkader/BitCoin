@@ -1,7 +1,7 @@
-package com.eslam.bitcoin.repository
+package com.eslam.bitcoin.marketprice.repository
 
-import com.eslam.bitcoin.model.MarketPriceResponse
-import com.eslam.bitcoin.network.ChartApi
+import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
+import com.eslam.bitcoin.marketprice.network.ChartApi
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals

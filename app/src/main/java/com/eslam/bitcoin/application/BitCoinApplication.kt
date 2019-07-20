@@ -1,11 +1,11 @@
-package com.eslam.bitcoin
+package com.eslam.bitcoin.application
 
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.eslam.bitcoin.di.DaggerMarketPriceComponent
-import com.eslam.bitcoin.di.MarketPriceComponent
-import com.eslam.bitcoin.di.MarketPriceModule
+import com.eslam.bitcoin.marketprice.di.DaggerMarketPriceComponent
+import com.eslam.bitcoin.marketprice.di.MarketPriceComponent
+import com.eslam.bitcoin.marketprice.di.MarketPriceModule
 
 /**
  * Application class

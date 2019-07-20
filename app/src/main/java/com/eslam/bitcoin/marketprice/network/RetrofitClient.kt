@@ -1,4 +1,4 @@
-package com.eslam.bitcoin.network
+package com.eslam.bitcoin.marketprice.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

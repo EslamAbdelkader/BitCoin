@@ -1,4 +1,4 @@
-package com.eslam.bitcoin.model
+package com.eslam.bitcoin.marketprice.model
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

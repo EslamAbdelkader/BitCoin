@@ -1,7 +1,7 @@
-package com.eslam.bitcoin.domain
+package com.eslam.bitcoin.marketprice.domain
 
-import com.eslam.bitcoin.model.MarketPriceResponse
-import com.eslam.bitcoin.repository.IMarketPriceRepository
+import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
+import com.eslam.bitcoin.marketprice.repository.IMarketPriceRepository
 import javax.inject.Inject
 
 /**

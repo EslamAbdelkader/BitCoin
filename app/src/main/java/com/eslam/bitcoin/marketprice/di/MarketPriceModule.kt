@@ -1,16 +1,16 @@
-package com.eslam.bitcoin.di
+package com.eslam.bitcoin.marketprice.di
 
 import android.content.Context
 import androidx.arch.core.util.Function
-import com.eslam.bitcoin.domain.IMarketPriceInteractor
-import com.eslam.bitcoin.domain.MarketPriceInteractor
-import com.eslam.bitcoin.model.MarketPriceMapper
-import com.eslam.bitcoin.model.MarketPriceResponse
-import com.eslam.bitcoin.model.MarketPriceUIModel
-import com.eslam.bitcoin.network.ChartApi
-import com.eslam.bitcoin.network.retrofit
-import com.eslam.bitcoin.repository.IMarketPriceRepository
-import com.eslam.bitcoin.repository.MarketPriceRepository
+import com.eslam.bitcoin.marketprice.domain.IMarketPriceInteractor
+import com.eslam.bitcoin.marketprice.domain.MarketPriceInteractor
+import com.eslam.bitcoin.marketprice.model.MarketPriceMapper
+import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
+import com.eslam.bitcoin.marketprice.model.MarketPriceUIModel
+import com.eslam.bitcoin.marketprice.network.ChartApi
+import com.eslam.bitcoin.marketprice.network.retrofit
+import com.eslam.bitcoin.marketprice.repository.IMarketPriceRepository
+import com.eslam.bitcoin.marketprice.repository.MarketPriceRepository
 import com.eslam.bitcoin.util.IStringProvider
 import com.eslam.bitcoin.util.StringProvider
 import dagger.Module
