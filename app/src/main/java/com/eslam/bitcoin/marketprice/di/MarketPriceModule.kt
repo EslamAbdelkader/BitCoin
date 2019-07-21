@@ -25,25 +25,21 @@ class MarketPriceModule(private val context: Context) {
     fun provideChartApi(): ChartApi = retrofit.create(ChartApi::class.java)
 
     @Provides
-    @Singleton
     fun provideMainRepository(marketPriceRepository: MarketPriceRepository): IMarketPriceRepository {
         return marketPriceRepository
     }
 
     @Provides
-    @Singleton
     fun provideMainInteractor(marketPriceInteractor: MarketPriceInteractor): IMarketPriceInteractor {
         return marketPriceInteractor
     }
 
     @Provides
-    @Singleton
     fun provideMapper(marketPriceMapper: MarketPriceMapper): Function<MarketPriceResponse, MarketPriceUIModel> {
         return marketPriceMapper
     }
 
     @Provides
-    @Singleton
     fun provideStringProvider(stringProvider: StringProvider): IStringProvider {
         return stringProvider
     }
