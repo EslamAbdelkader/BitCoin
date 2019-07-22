@@ -1,9 +1,8 @@
-package com.eslam.bitcoin.marketprice.viewmodel
+package com.eslam.bitcoin.marketprice.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.arch.core.util.Function
 import com.eslam.bitcoin.R
-import com.eslam.bitcoin.marketprice.domain.IMarketPriceInteractor
 import com.eslam.bitcoin.marketprice.model.MarketPriceMapper
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import com.eslam.bitcoin.marketprice.model.MarketPriceUIModel

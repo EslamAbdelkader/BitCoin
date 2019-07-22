@@ -1,7 +1,7 @@
 package com.eslam.bitcoin.marketprice.domain
 
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
-import com.eslam.bitcoin.marketprice.repository.IMarketPriceRepository
+import com.eslam.bitcoin.marketprice.presentation.IMarketPriceInteractor
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -18,14 +18,4 @@ class MarketPriceInteractor @Inject constructor() : IMarketPriceInteractor {
      * retrieves a Single Observable of MarketPriceResponse from the Repository
      */
     override fun loadData(): Single<MarketPriceResponse> = marketPriceRepository.getMarketPrice()
-}
-
-/**
- * Market Price Interactor Interface
- */
-interface IMarketPriceInteractor {
-    /**
-     * retrieves a Single Observable of MarketPriceResponse from the Repository
-     */
-    fun loadData(): Single<MarketPriceResponse>
 }

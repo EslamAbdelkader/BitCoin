@@ -1,9 +1,9 @@
 package com.eslam.bitcoin.marketprice.di
 
 import com.eslam.bitcoin.marketprice.domain.MarketPriceInteractor
+import com.eslam.bitcoin.marketprice.presentation.MarketPriceViewModel
 import com.eslam.bitcoin.marketprice.repository.MarketPriceRepository
 import com.eslam.bitcoin.util.StringProvider
-import com.eslam.bitcoin.marketprice.viewmodel.MarketPriceViewModel
 import dagger.Component
 import javax.inject.Singleton
 

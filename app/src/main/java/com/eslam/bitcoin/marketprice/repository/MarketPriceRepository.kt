@@ -1,5 +1,6 @@
 package com.eslam.bitcoin.marketprice.repository
 
+import com.eslam.bitcoin.marketprice.domain.IMarketPriceRepository
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import com.eslam.bitcoin.marketprice.network.ChartApi
 import io.reactivex.Single
@@ -26,11 +27,4 @@ class MarketPriceRepository @Inject constructor() : IMarketPriceRepository {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
-}
-
-/**
- * Market Price Repository Interface
- */
-interface IMarketPriceRepository {
-    fun getMarketPrice(): Single<MarketPriceResponse>
 }
