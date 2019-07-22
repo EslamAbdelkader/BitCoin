@@ -4,11 +4,12 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.arch.core.util.Function
 import androidx.lifecycle.viewModelScope
 import com.eslam.bitcoin.R
-import com.eslam.bitcoin.marketprice.domain.IMarketPriceInteractor
+import com.eslam.bitcoin.marketprice.presentation.IMarketPriceInteractor
 import com.eslam.bitcoin.marketprice.model.MarketPriceMapper
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import com.eslam.bitcoin.marketprice.model.MarketPriceUIModel
 import com.eslam.bitcoin.marketprice.model.State
+import com.eslam.bitcoin.marketprice.presentation.MarketPriceViewModel
 import com.eslam.bitcoin.util.IStringProvider
 import com.nhaarman.mockitokotlin2.*
 import kotlinx.coroutines.*

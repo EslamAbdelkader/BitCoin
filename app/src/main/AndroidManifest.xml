@@ -12,7 +12,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme" android:fullBackupContent="@xml/backup_descriptor"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.eslam.bitcoin.marketprice.view.MarketPriceActivity"
+        <activity android:name="com.eslam.bitcoin.marketprice.presentation.MarketPriceActivity"
         android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -1,4 +1,4 @@
-package com.eslam.bitcoin.marketprice.viewmodel
+package com.eslam.bitcoin.marketprice.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

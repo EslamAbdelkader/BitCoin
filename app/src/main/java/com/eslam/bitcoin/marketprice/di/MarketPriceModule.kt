@@ -2,14 +2,14 @@ package com.eslam.bitcoin.marketprice.di
 
 import android.content.Context
 import androidx.arch.core.util.Function
-import com.eslam.bitcoin.marketprice.domain.IMarketPriceInteractor
+import com.eslam.bitcoin.marketprice.presentation.IMarketPriceInteractor
 import com.eslam.bitcoin.marketprice.domain.MarketPriceInteractor
 import com.eslam.bitcoin.marketprice.model.MarketPriceMapper
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import com.eslam.bitcoin.marketprice.model.MarketPriceUIModel
 import com.eslam.bitcoin.marketprice.network.ChartApi
 import com.eslam.bitcoin.marketprice.network.retrofit
-import com.eslam.bitcoin.marketprice.repository.IMarketPriceRepository
+import com.eslam.bitcoin.marketprice.domain.IMarketPriceRepository
 import com.eslam.bitcoin.marketprice.repository.MarketPriceRepository
 import com.eslam.bitcoin.util.IStringProvider
 import com.eslam.bitcoin.util.StringProvider

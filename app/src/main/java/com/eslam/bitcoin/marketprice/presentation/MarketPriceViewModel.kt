@@ -1,4 +1,4 @@
-package com.eslam.bitcoin.marketprice.viewmodel
+package com.eslam.bitcoin.marketprice.presentation
 
 import androidx.arch.core.util.Function
 import androidx.lifecycle.LiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.eslam.bitcoin.R
-import com.eslam.bitcoin.marketprice.domain.IMarketPriceInteractor
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import com.eslam.bitcoin.marketprice.model.MarketPriceUIModel
 import com.eslam.bitcoin.marketprice.model.State

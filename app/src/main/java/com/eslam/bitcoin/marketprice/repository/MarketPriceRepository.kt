@@ -1,5 +1,6 @@
 package com.eslam.bitcoin.marketprice.repository
 
+import com.eslam.bitcoin.marketprice.domain.IMarketPriceRepository
 import com.eslam.bitcoin.marketprice.model.MarketPriceResponse
 import com.eslam.bitcoin.marketprice.network.ChartApi
 import javax.inject.Inject
@@ -19,12 +20,4 @@ class MarketPriceRepository @Inject constructor() : IMarketPriceRepository {
      */
     @Throws(Exception::class)
     override suspend fun getMarketPrice(): MarketPriceResponse = chartApi.getMarketPrice()
-}
-
-/**
- * Market Price Repository Interface
- */
-interface IMarketPriceRepository {
-    @Throws(Exception::class)
-    suspend fun getMarketPrice(): MarketPriceResponse
 }

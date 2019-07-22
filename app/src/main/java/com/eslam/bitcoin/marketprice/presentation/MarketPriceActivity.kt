@@ -1,4 +1,4 @@
-package com.eslam.bitcoin.marketprice.view
+package com.eslam.bitcoin.marketprice.presentation
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -11,8 +11,6 @@ import com.eslam.bitcoin.marketprice.model.MarketPriceUIModel
 import com.eslam.bitcoin.marketprice.model.State
 import com.eslam.bitcoin.util.hideLoading
 import com.eslam.bitcoin.util.showLoading
-import com.eslam.bitcoin.marketprice.viewmodel.MarketPriceViewModel
-import com.eslam.bitcoin.marketprice.viewmodel.MarketPriceViewModelFactory
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
