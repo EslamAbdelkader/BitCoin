@@ -1,4 +1,4 @@
 # BitCoin
-Android app showing a usage example for MVVM clean architecture using
-- RxJava on master branch
-- Coroutines on coroutines branch
+Android app showing a usage example for MVVM clean architecture
+
+This branch is currently a work-in-progress for extracting base and feature modules out of the app module
